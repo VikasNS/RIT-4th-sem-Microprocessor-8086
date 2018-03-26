@@ -1,7 +1,7 @@
 .model small
 
 .data
-	screen_type db 03
+	screen_type db 02
 
 	x_coordinate db 40
 	y_coordinate db 12
