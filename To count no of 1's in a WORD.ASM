@@ -17,6 +17,7 @@ START:
 		INC BX
 	Next:
 		LOOP Rotate
+		MOV result,BX
 		MOV AH,4CH
 		INT 21H		
 END START
