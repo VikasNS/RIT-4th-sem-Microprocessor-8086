@@ -10,12 +10,6 @@ res db 1
 		mov al,num
 		call factorial
 
-		mov dl,res
-		mov dh,'0'
-		add dl,dh
-		mov ah,02h
-		int 21h
-
 		mov ah,4ch
 		int 21h
 
