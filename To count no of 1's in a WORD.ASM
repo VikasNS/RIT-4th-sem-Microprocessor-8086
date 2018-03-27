@@ -19,12 +19,6 @@ START:
 		LOOP Rotate
 		
 		MOV result,BX
-		
-		MOV DL,BL  ;To display
-		ADD DL,'0'
-		MOV AH,2H
-		INT 21H
-		
 		MOV AH,4CH
 		INT 21H		
 END START
