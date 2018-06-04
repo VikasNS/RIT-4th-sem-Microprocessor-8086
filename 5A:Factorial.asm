@@ -23,5 +23,5 @@ res db 1
 			mul res
 			mov res,al
 			lets_end:ret
-			endp factorial
+			factorial endp 
 	end start
