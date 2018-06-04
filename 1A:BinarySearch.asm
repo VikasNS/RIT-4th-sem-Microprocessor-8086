@@ -37,9 +37,7 @@ start:
 		
 		cmp [bx],cl
 		jz found_
-		cmp [bx],cl
 		jb chg_si
-		cmp [bx],cl
 		ja chg_di
 		
 		
