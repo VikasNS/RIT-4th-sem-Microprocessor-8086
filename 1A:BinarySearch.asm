@@ -10,10 +10,13 @@ endm
 
 data segment
 	numbers db 1,2,3,4,5
-	key db 7
+	key db 2
 	found db "Key was found$"
 	didnt_find db "Key was not found$"
+	
 data ends
+
+
 
 code segment
 start:
@@ -22,6 +25,8 @@ start:
 	
 	lea si,numbers
 	mov di,si
+	dec di
+	add di,5
 	
 	mov cl,key
 	next_comp:
@@ -31,8 +36,10 @@ start:
 		shr bx,01 ;divide by 2
 		
 		cmp [bx],cl
-		je found_
+		jz found_
+		cmp [bx],cl
 		jb chg_si
+		cmp [bx],cl
 		ja chg_di
 		
 		
@@ -56,6 +63,7 @@ start:
 		jmp end_it
 		
 	didnt_find_:
+		
 		display didnt_find
 		jmp end_it
 		
