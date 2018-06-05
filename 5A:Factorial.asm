@@ -1,6 +1,6 @@
 .model small
 .data
-num db 5
+num db 5 ;This program doesnt work for numbers greater than 5 as their factorial exceeds 8 bits,Tell the same to teacher if asked.
 res db 1
 
 .code
@@ -9,12 +9,14 @@ res db 1
 		mov ds,ax
 		mov al,num
 		call factorial
+		
+		mov bl,res ;answer will be stored in bl register in HEXADECIMAL form.!
 
-		mov ah,4ch
+        mov ah,4ch
 		int 21h
 
 		factorial proc
-			cmp al,00
+			cmp al,1
 			je lets_end
 			push ax
 			dec al
@@ -24,4 +26,6 @@ res db 1
 			mov res,al
 			lets_end:ret
 			factorial endp 
+			
+		
 	end start
