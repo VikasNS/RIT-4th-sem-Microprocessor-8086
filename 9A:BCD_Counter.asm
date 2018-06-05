@@ -11,13 +11,13 @@
 			aam
 			add ax,3030h
 			
-			push ax
+			push ax   ;to prevent al from changing when int 21h is called
 			
 			mov dl,ah
 			mov ah,02h
 			int 21h
 			
-		    pop ax
+		    	pop ax
 			
 			mov dl,al
 			mov ah,02h
