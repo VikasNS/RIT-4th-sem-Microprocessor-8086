@@ -55,9 +55,8 @@ START:
 	
 	
 	failed_to_open_label:
-		MOV DL,AX
-		ADD DL,'0'
-		MOV AH,02h
+		LEA DX,failed_to_open
+		MOV AH,09h
 		INT 21H
 	
 	end_it:
